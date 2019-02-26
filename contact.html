@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            border: 0px solid #000;
+            border-radius: 11px;
+            margin: 50px;
+            width: auto;
+            height: auto;
+            min-width: 400px;
+            min-height: 450px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+        }
+
+        form>label {
+            color: rgb(45, 143, 173);
+        }
+
+        .txtar {
+            padding: 10px;
+            margin: 15px;
+            width: 250px;
+            height: 25px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid rgb(45, 143, 173);
+            transition: width 1s, height 1s;
+
+        }
+
+
+        .txtar:focus {
+            transition: background-color 1.4s;
+            width: 500px;
+            height: 250px;
+            transition: width 1s, height 1s;
+            background-color: rgb(194, 219, 229);
+
+        }
+
+        .txt {
+            padding: 10px;
+            margin: 15px;
+            width: 250px;
+            height: 25px;
+            border-radius: 5px;
+            /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
+            animation: scalingBackward 1s ease;
+            background-color: #fff;
+            transition: background-color 1s;
+            border: 1px solid rgb(45, 143, 173);
+
+        }
+
+        .txt:focus {
+            background-color: rgb(194, 219, 229);
+            animation: scaling 1s ease forwards;
+            transition: background-color 1.4s;
+        }
+
+        .submit {
+            border: none;
+            background-color: rgb(45, 143, 173);
+            /*color: #fff; */
+            font-size: 1.5em;
+            border-radius: 3px;
+            height: 40px;
+            width: 130px;
+            margin: 15px;
+        }
+
+        .submit a {
+            text-decoration: none;
+            color: #fff;
+
+        }
+
+        .submit-button {
+            display: inline-block;
+            vertical-align: middle;
+
+            width: auto;
+            height: 40px;
+            /* align-content: space-around; 
+           display: flex;
+           */
+            border: none;
+            background-color: rgb(37, 143, 170);
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin: 15px;
+        }
+
+        .submit img {
+            vertical-align: middle;
+            width: 30px;
+            height: 15px;
+            /* filter: invert(100%); */
+        }
+
+        /* .submit:hover{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        } */
+
+
+        .txt:hover,
+        .submit-button:hover,
+        .txtar:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes scaling {
+            0% {
+                transform: scale(1),
+            }
+
+            100% {
+                transform: scale(1.3)
+            }
+
+        }
+
+        @keyframes scalingBackward {
+            0% {
+                transform: scale(1.3)
+            }
+
+            100% {
+                transform: scale(1)
+            }
+        }
+
+        /* Icon Spin */
+        .hvr-icon-spin {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+        }
+
+        .hvr-icon-spin .hvr-icon {
+            -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+        }
+
+        .hvr-icon-spin:hover .hvr-icon,
+        .hvr-icon-spin:focus .hvr-icon,
+        .hvr-icon-spin:active .hvr-icon {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+
+        /* Icon Fade */
+        .hvr-icon-fade {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(255, 255, 255, 0);
+        }
+
+        .hvr-icon-fade .hvr-icon {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transition-property: color;
+            transition-property: color;
+        }
+
+        .hvr-icon-fade img:hover .hvr-icon,
+        .hvr-icon-fade img:focus .hvr-icon,
+        .hvr-icon-fade img:active .hvr-icon {
+            color: rgb(129, 22, 22);
+        }
+
+        /* Bounce To Top */
+        .hvr-bounce-to-top {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            position: relative;
+            -webkit-transition-property: color;
+            transition-property: color;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+
+        .hvr-bounce-to-top:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgb(70, 197, 144);
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+
+        .hvr-bounce-to-top a:hover,
+        .hvr-bounce-to-top a:focus,
+        .hvr-bounce-to-top a:active {
+            color: rgb(0, 0, 0);
+        }
+
+        .hvr-bounce-to-top:hover:before,
+        .hvr-bounce-to-top:focus:before,
+        .hvr-bounce-to-top:active:before {
+            -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+            -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+            transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+        }
+    </style>
+   
+
+</head>
+
+<body>
+
+        
+    <form methode="post" action="mail.php">
+        <label>
+            <h1>
+                Contact Form
+            </h1>
+        </label>
+        <input type="text" placeholder="name" class="txt">
+        <input type="email" name="email" required placeholder="email" class="txt">
+        <textarea type="text" name="message" placeholder="text" class="txtar" required></textarea>
+
+        <button type="submit" class='hvr-bounce-to-top  submit'>
+            <a href="#" class="hvr-icon-fade">
+                Send
+                <!-- <img src="sync-alt-solid.svg" class="hvr-icon" alt=""> -->
+            </a>
+        </button>
+
+    </form>
+ 
+
+</body>
+
+</html>
